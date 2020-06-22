@@ -1,6 +1,7 @@
 import random
 from time import sleep
 import os
+from platform import system
 
 
 def delete_file(filename):
@@ -34,7 +35,11 @@ def goto(linenum):
 
 
 def clear():
-    os.system('cls')
+    osname = system()
+    if(osname == 'Windows'):
+        os.system('cls')
+    else:
+        os.system('clear')
 
 
 try:
